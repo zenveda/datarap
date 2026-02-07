@@ -1,13 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #4C78A8;
-  --color-primary-hover: #3A5F8A;
+  --color-primary: #3c6e8f;
+  --color-primary-hover: #2f5874;
   --color-surface: #ffffff;
-  --color-background: #f8fafc;
-  --color-border: #e2e8f0;
-  --color-text-primary: #1e293b;
-  --color-text-secondary: #64748b;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-background: #f7f3ea;
+  --color-border: #e8dfcf;
+  --color-text-primary: #1f2a37;
+  --color-text-secondary: #6b7280;
+  --font-sans: 'Source Sans 3', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino', serif;
+}
+
+.font-display {
+  font-family: var(--chart-font-display, var(--font-display));
+}
+
+.chart-root {
+  font-family: var(--chart-font-sans, var(--font-sans));
 }

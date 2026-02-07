@@ -17,6 +17,7 @@ interface PieChartViewProps {
 }
 
 export function PieChartView({ data, colors, isDonut, config }: PieChartViewProps) {
+  const labelColor = '#6b7280';
   return (
     <ResponsiveContainer width="100%" height={400}>
       <PieChart>
@@ -29,10 +30,12 @@ export function PieChartView({ data, colors, isDonut, config }: PieChartViewProp
           paddingAngle={isDonut ? 3 : 1}
           dataKey="value"
           nameKey="name"
-          label={({ name, percent }: { name?: string; percent?: number }) =>
-            `${name ?? ''} ${((percent ?? 0) * 100).toFixed(0)}%`
-          }
-          labelLine={{ stroke: '#cbd5e1', strokeWidth: 1 }}
+          label={({ name, percent, x, y, textAnchor }: any) => (
+            <text x={x} y={y} fill={labelColor} fontSize={11} textAnchor={textAnchor}>
+              {`${name ?? ''} ${((percent ?? 0) * 100).toFixed(0)}%`}
+            </text>
+          )}
+          labelLine={{ stroke: '#e6dcc8', strokeWidth: 1 }}
           stroke="none"
         >
           {data.map((_, i) => (
@@ -45,7 +48,7 @@ export function PieChartView({ data, colors, isDonut, config }: PieChartViewProp
             verticalAlign={config.legendPosition === 'top' ? 'top' : 'bottom'}
             iconType="circle"
             iconSize={8}
-            wrapperStyle={{ fontSize: 12, color: '#64748b', paddingTop: 8 }}
+            wrapperStyle={{ fontSize: 12, color: '#7c6f63', paddingTop: 8 }}
           />
         )}
       </PieChart>

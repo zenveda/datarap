@@ -13,6 +13,11 @@ export const DEFAULT_APPEARANCE: ChartAppearance = {
   xAxisLabel: '',
   yAxisLabel: '',
   startFromZero: true,
+  annotations: [],
+  yAxisFormat: 'raw',
+  yAxisCurrency: 'none',
+  bodyFont: 'source-sans-3',
+  titleFont: 'fraunces',
 };
 
 export const DEFAULT_MAPPING: AxisMapping = {

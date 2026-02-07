@@ -15,13 +15,13 @@ export function ChartTooltip({ active, payload, label }: ChartTooltipProps) {
   if (!active || !payload?.length) return null;
 
   return (
-    <div className="bg-gray-900 text-white px-3 py-2 rounded-lg shadow-xl text-xs border border-gray-700">
-      {label && <p className="font-medium text-gray-300 mb-1.5 pb-1.5 border-b border-gray-700">{label}</p>}
+    <div className="bg-[#fffaf0] text-slate-800 px-3 py-2 rounded-lg shadow-[0_12px_24px_rgba(88,71,42,0.18)] text-xs border border-amber-200">
+      {label && <p className="font-semibold text-slate-600 mb-1.5 pb-1.5 border-b border-amber-100">{label}</p>}
       <div className="space-y-1">
         {payload.map((entry, i) => (
           <div key={i} className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: entry.color }} />
-            <span className="text-gray-400">{entry.name}:</span>
+            <span className="text-slate-500">{entry.name}:</span>
             <span className="font-semibold ml-auto tabular-nums">
               {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
             </span>
