@@ -1,4 +1,5 @@
 import { Suspense, lazy } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { AppShell } from './components/layout/AppShell';
 import { useWizardStore } from './store/useWizardStore';
 
@@ -44,6 +45,7 @@ function App() {
       <Suspense fallback={<div className="px-7 py-6 text-sm text-gray-500">Loading…</div>}>
         {renderStep()}
       </Suspense>
+      <Analytics />
     </AppShell>
   );
 }
